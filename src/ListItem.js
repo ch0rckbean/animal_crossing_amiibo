@@ -1,29 +1,33 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-// https://amiiboapi.com/
+import Grid from '@mui/material/Unstable_Grid2'; // https://amiiboapi.com/
 
 export default function ListItem({ amiiboList }) {
   return (
-    <Container style={{ background: 'pink' }}>
+    <Grid container style={{ background: 'pink', spacing: 0 }}>
       {amiiboList.length > 1 ? (
-        <Row style={{ background: 'aqua' }}>
-          {amiiboList.map((amiibo, idx) => {
-            return (
-              <Col md={4} lg={3}>
-                <div key={idx}>
-                  <img src={amiibo.image} alt='amiiboImg' />
-                  <br></br>
-                  이름: {amiibo.name}
-                  <br></br>
-                  타입: {amiibo.type}
-                </div>
-              </Col>
-            );
-          })}
-        </Row>
+        amiiboList.map((amiibo, idx) => {
+          return (
+            <Grid
+              style={{ background: 'green' }}
+              key={idx}
+              item
+              xs={6}
+              sm={6}
+              md={3}
+              lg={3}
+              xl={2}
+            >
+              <img src={amiibo.image} alt='amiiboImg' />
+              <br></br>
+              이름: {amiibo.name}
+              <br></br>
+              타입: {amiibo.type}
+            </Grid>
+          );
+        })
       ) : (
         <h3>주민들을 만나보세요!!</h3>
       )}
-    </Container>
+    </Grid>
   );
 }
