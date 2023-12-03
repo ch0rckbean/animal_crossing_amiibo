@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ListItem from './ListItem';
 import axios from 'axios';
+import AmiiboItf from './AmiiboItf';
 
 export default function List() {
-  const [clicked, setClicked] = useState(false);
-  const [display, setDisplay] = useState('block');
-  const [amiiboList, setAmiiboList] = useState([]);
+  const [clicked, setClicked] = useState<boolean>(false);
+  const [display, setDisplay] = useState<string>('block');
+  const [amiiboList, setAmiiboList] = useState<AmiiboItf[]>([]);
 
   const getAmiibos = async () => {
     const amiibos = await axios({
