@@ -12,7 +12,7 @@ export default function ListItem({ amiiboList }: ListItemProps) {
   return (
     <Grid container>
       {amiiboList.length > 1 ? (
-        amiiboList.map((amiibo, idx) => {
+        amiiboList.slice(1, 10).map((amiibo, idx) => {
           return (
             <Grid
               style={{ background: 'green' }}
