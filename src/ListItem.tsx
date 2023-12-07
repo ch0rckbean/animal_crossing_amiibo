@@ -16,6 +16,7 @@ export default function ListItem({ amiiboList }: ListItemProps) {
           // pagination
           return (
             <Grid
+              className='ambList'
               style={{ background: 'green' }}
               key={idx}
               xs={6}
@@ -24,7 +25,7 @@ export default function ListItem({ amiiboList }: ListItemProps) {
               lg={3}
               xl={3}
             >
-              <Item>
+              <Item className='ambItem'>
                 <img src={amiibo.image} alt='amiiboImg' />
                 <br></br>
                 이름: {amiibo.name}
@@ -36,7 +37,7 @@ export default function ListItem({ amiiboList }: ListItemProps) {
         })
       ) : (
         <Item>
-          <h3 classname='goBtn'>주민들을 만나보세요!!</h3>
+          <h3 className='goBtn'>주민들을 만나보세요!!</h3>
         </Item>
       )}
     </Grid>
