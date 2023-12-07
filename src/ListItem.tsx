@@ -13,6 +13,7 @@ export default function ListItem({ amiiboList }: ListItemProps) {
     <Grid container>
       {amiiboList.length > 1 ? (
         amiiboList.slice(1, 10).map((amiibo, idx) => {
+          // pagination
           return (
             <Grid
               style={{ background: 'green' }}
@@ -35,7 +36,7 @@ export default function ListItem({ amiiboList }: ListItemProps) {
         })
       ) : (
         <Item>
-          <h3>주민들을 만나보세요!!</h3>
+          <h3 classname='goBtn'>주민들을 만나보세요!!</h3>
         </Item>
       )}
     </Grid>
